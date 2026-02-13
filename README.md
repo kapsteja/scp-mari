@@ -20,14 +20,14 @@ scp-mari/
 ```
 
 -----
-####For MAIN environment:
+**####for main environment**
 terraform init -backend-config=main/backend.conf -reconfigure
 bash main/imports_main.sh
 terraform plan -var-file="main/main.tfvars"
 terraform apply -var-file="main/main.tfvars"
------
-####for SANDBOX environment
+**####for SANDBOX environment**
 terraform init -backend-config=sandbox/backend.conf -reconfigure
 bash sandbox/imports_sandbox.sh
 terraform plan -var-file="sandbox/sandbox.tfvars"
 terraform apply -var-file="sandbox/sandbox.tfvars"
+
