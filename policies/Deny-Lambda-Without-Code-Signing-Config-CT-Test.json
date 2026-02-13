@@ -1,1 +1,30 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"Statement1","Effect":"Deny","Action":["lambda:CreateFunction","lambda:UpdateFunctionCode","lambda:UpdateCodeSigningConfig","lambda:UpdateFunctionCodeSigningConfig"],"Resource":["*"],"Condition":{"StringNotLike":{"lambda:CodeSigningConfigArn":["arn:aws:lambda:*:*:code-signing-config:*"]},"ArnNotLike":{"aws:PrincipalArn":["arn:aws:iam::*:role/AWSControlTowerExecution"]}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Deny",
+            "Action": [
+                "lambda:CreateFunction",
+                "lambda:UpdateFunctionCode",
+                "lambda:UpdateCodeSigningConfig",
+                "lambda:UpdateFunctionCodeSigningConfig"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "lambda:CodeSigningConfigArn": [
+                        "arn:aws:lambda:*:*:code-signing-config:*"
+                    ]
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution"
+                    ]
+                }
+            }
+        }
+    ]
+}

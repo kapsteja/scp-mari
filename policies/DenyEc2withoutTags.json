@@ -1,1 +1,147 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"AllowRunInstancesWithRestrictions1","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"StringNotLike":{"aws:RequestTag/dud":"?*","aws:RequestTag/cloudservice":"?*","aws:RequestTag/owner":"?*","aws:RequestTag/createdby":"?*","aws:RequestTag/accenture_ru":"?*","aws:RequestTag/environment":"?*","aws:RequestTag/location":"?*","aws:RequestTag/project":"?*"}}},{"Sid":"AllowRunInstancesWithRestrictions2","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"dud"}}},{"Sid":"AllowRunInstancesWithRestrictions3","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"cloudservice"}}},{"Sid":"AllowRunInstancesWithRestrictions4","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"owner"}}},{"Sid":"AllowRunInstancesWithRestrictions5","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"createdby"}}},{"Sid":"AllowRunInstancesWithRestrictions6","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"accenture_ru"}}},{"Sid":"AllowRunInstancesWithRestrictions7","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"environment"}}},{"Sid":"AllowRunInstancesWithRestrictions8","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"location"}}},{"Sid":"AllowRunInstancesWithRestrictions9","Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*:*:instance/*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"project"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowRunInstancesWithRestrictions1",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:RequestTag/dud": "?*",
+                    "aws:RequestTag/cloudservice": "?*",
+                    "aws:RequestTag/owner": "?*",
+                    "aws:RequestTag/createdby": "?*",
+                    "aws:RequestTag/accenture_ru": "?*",
+                    "aws:RequestTag/environment": "?*",
+                    "aws:RequestTag/location": "?*",
+                    "aws:RequestTag/project": "?*"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions2",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "dud"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions3",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "cloudservice"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions4",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "owner"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions5",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "createdby"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions6",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "accenture_ru"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions7",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "environment"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions8",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "location"
+                }
+            }
+        },
+        {
+            "Sid": "AllowRunInstancesWithRestrictions9",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "project"
+                }
+            }
+        }
+    ]
+}

@@ -1,1 +1,202 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"NoConsolePasswords","Effect":"Deny","Action":["iam:CreateLoginProfile","iam:UpdateLoginProfile","iam:ChangePassword"],"Resource":"*"},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"Null":{"aws:RequestTag/Name":"true","aws:RequestTag/dud":"true","aws:RequestTag/cloudservice":"true","aws:RequestTag/owner":"true","aws:RequestTag/createdby":"true","aws:RequestTag/accenture_ru":"true","aws:RequestTag/environment":"true","aws:RequestTag/location":"true","aws:RequestTag/project":"true","aws:RequestTag/domain":"true"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"dud"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"domain"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"owner"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"cloudservice"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"createdby"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"accenture_ru"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"environment"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"location"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"project"},"StringNotEquals":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLike":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac"}}},{"Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","elasticloadbalancing:CreateLoadBalancer"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*"],"Condition":{"StringNotLike":{"aws:RequestTag/domain":"?*"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "NoConsolePasswords",
+            "Effect": "Deny",
+            "Action": [
+                "iam:CreateLoginProfile",
+                "iam:UpdateLoginProfile",
+                "iam:ChangePassword"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/Name": "true",
+                    "aws:RequestTag/dud": "true",
+                    "aws:RequestTag/cloudservice": "true",
+                    "aws:RequestTag/owner": "true",
+                    "aws:RequestTag/createdby": "true",
+                    "aws:RequestTag/accenture_ru": "true",
+                    "aws:RequestTag/environment": "true",
+                    "aws:RequestTag/location": "true",
+                    "aws:RequestTag/project": "true",
+                    "aws:RequestTag/domain": "true"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "dud"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "domain"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "owner"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "cloudservice"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "createdby"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "accenture_ru"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "environment"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "location"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "project"
+                },
+                "StringNotEquals": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "elasticloadbalancing:CreateLoadBalancer"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:RequestTag/domain": "?*"
+                }
+            }
+        }
+    ]
+}

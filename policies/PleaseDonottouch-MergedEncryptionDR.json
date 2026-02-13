@@ -1,1 +1,116 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"DenyUnencryptedEBSVolumeExceptDR","Effect":"Deny","Action":"ec2:CreateVolume","Resource":"*","Condition":{"BoolIfExists":{"ec2:Encrypted":"false"},"StringNotEquals":{"aws:RequestTag/AWSElasticDisasterRecoveryManaged":"drs.amazonaws.com"},"ForAllValues:StringNotEquals":{"aws:RequestTag/DRSRecoveryType":["DRILL_INSTANCE","RECOVERY_INSTANCE"]}}},{"Sid":"DenyRunInstancesWithUnencryptedVolumesExceptDR","Effect":"Deny","Action":"ec2:RunInstances","Resource":"*","Condition":{"BoolIfExists":{"ec2:Encrypted":"false"},"StringNotEquals":{"aws:RequestTag/AWSElasticDisasterRecoveryManaged":"drs.amazonaws.com"},"ForAllValues:StringNotEquals":{"aws:RequestTag/DRSRecoveryType":["DRILL_INSTANCE","RECOVERY_INSTANCE"]}}},{"Sid":"DenyUnencryptedRDSInstancesDR","Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAnyValue:StringEquals":{"rds:DatabaseEngine":["mariadb","mysql","oracle-ee","oracle-se2","oracle-se1","oracle-se","postgres","sqlserver-ee","sqlserver-se","sqlserver-ex","sqlserver-web"]},"Bool":{"rds:StorageEncrypted":"false"}}},{"Sid":"DenyUnencryptedAuroraClustersDR","Effect":"Deny","Action":"rds:CreateDBCluster","Resource":"arn:aws:rds:*:*:cluster:*","Condition":{"Bool":{"rds:StorageEncrypted":"false"}}},{"Sid":"DenyTagUpdatesOnDRInstances","Effect":"Deny","Action":"ec2:CreateTags","Resource":"arn:aws:ec2:*:*:instance/*","Condition":{"StringNotEquals":{"aws:username":"AWSServiceRoleForElasticDisasterRecovery"},"StringLike":{"aws:RequestTag/AWSElasticDisasterRecoveryManaged":"drs.amazonaws.com"},"ForAllValues:StringLike":{"aws:RequestTag/DRSRecoveryType":["DRILL_INSTANCE","RECOVERY_INSTANCE"]}}},{"Sid":"DenyTagUpdatesOnDRVolumes","Effect":"Deny","Action":"ec2:CreateTags","Resource":"arn:aws:ec2:*:*:volume/*","Condition":{"StringNotEquals":{"aws:username":"AWSServiceRoleForElasticDisasterRecovery"},"StringLike":{"aws:RequestTag/AWSElasticDisasterRecoveryManaged":"drs.amazonaws.com"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyUnencryptedEBSVolumeExceptDR",
+            "Effect": "Deny",
+            "Action": "ec2:CreateVolume",
+            "Resource": "*",
+            "Condition": {
+                "BoolIfExists": {
+                    "ec2:Encrypted": "false"
+                },
+                "StringNotEquals": {
+                    "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "drs.amazonaws.com"
+                },
+                "ForAllValues:StringNotEquals": {
+                    "aws:RequestTag/DRSRecoveryType": [
+                        "DRILL_INSTANCE",
+                        "RECOVERY_INSTANCE"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyRunInstancesWithUnencryptedVolumesExceptDR",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "BoolIfExists": {
+                    "ec2:Encrypted": "false"
+                },
+                "StringNotEquals": {
+                    "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "drs.amazonaws.com"
+                },
+                "ForAllValues:StringNotEquals": {
+                    "aws:RequestTag/DRSRecoveryType": [
+                        "DRILL_INSTANCE",
+                        "RECOVERY_INSTANCE"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyUnencryptedRDSInstancesDR",
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "rds:DatabaseEngine": [
+                        "mariadb",
+                        "mysql",
+                        "oracle-ee",
+                        "oracle-se2",
+                        "oracle-se1",
+                        "oracle-se",
+                        "postgres",
+                        "sqlserver-ee",
+                        "sqlserver-se",
+                        "sqlserver-ex",
+                        "sqlserver-web"
+                    ]
+                },
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "DenyUnencryptedAuroraClustersDR",
+            "Effect": "Deny",
+            "Action": "rds:CreateDBCluster",
+            "Resource": "arn:aws:rds:*:*:cluster:*",
+            "Condition": {
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "DenyTagUpdatesOnDRInstances",
+            "Effect": "Deny",
+            "Action": "ec2:CreateTags",
+            "Resource": "arn:aws:ec2:*:*:instance/*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:username": "AWSServiceRoleForElasticDisasterRecovery"
+                },
+                "StringLike": {
+                    "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "drs.amazonaws.com"
+                },
+                "ForAllValues:StringLike": {
+                    "aws:RequestTag/DRSRecoveryType": [
+                        "DRILL_INSTANCE",
+                        "RECOVERY_INSTANCE"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyTagUpdatesOnDRVolumes",
+            "Effect": "Deny",
+            "Action": "ec2:CreateTags",
+            "Resource": "arn:aws:ec2:*:*:volume/*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:username": "AWSServiceRoleForElasticDisasterRecovery"
+                },
+                "StringLike": {
+                    "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "drs.amazonaws.com"
+                }
+            }
+        }
+    ]
+}

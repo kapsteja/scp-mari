@@ -1,1 +1,181 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"D1","Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","ec2:CreateSnapshot*","rds:CreateDBInstance","rds:CreateDBSnapshot","elasticloadbalancing:CreateLoadBalancer","docdb-elastic:CreateCluster*"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:ec2:*:*:snapshot/*","arn:aws:rds:*:*:db:*","arn:aws:rds:*:*:snapshot:*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*","arn:aws:docdb-elastic:*:*:cluster/*"],"Condition":{"Null":{"aws:RequestTag/Name":"true"},"StringNotEqualsIfExists":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLikeIfExists":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac*"}}},{"Sid":"D2","Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","ec2:CreateSnapshot*","rds:CreateDBInstance","rds:CreateDBSnapshot","elasticloadbalancing:CreateLoadBalancer","docdb-elastic:CreateCluster*"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:ec2:*:*:snapshot/*","arn:aws:rds:*:*:db:*","arn:aws:rds:*:*:snapshot:*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*","arn:aws:docdb-elastic:*:*:cluster/*"],"Condition":{"Null":{"aws:RequestTag/dud":"true"},"StringNotEqualsIfExists":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLikeIfExists":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac*"}}},{"Sid":"D3","Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","ec2:CreateSnapshot*","rds:CreateDBInstance","rds:CreateDBSnapshot","elasticloadbalancing:CreateLoadBalancer","docdb-elastic:CreateCluster*"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:ec2:*:*:snapshot/*","arn:aws:rds:*:*:db:*","arn:aws:rds:*:*:snapshot:*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*","arn:aws:docdb-elastic:*:*:cluster/*"],"Condition":{"Null":{"aws:RequestTag/cloudservice":"true"},"StringNotEqualsIfExists":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLikeIfExists":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac*"}}},{"Sid":"D4","Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","ec2:CreateSnapshot*","rds:CreateDBInstance","rds:CreateDBSnapshot","elasticloadbalancing:CreateLoadBalancer","docdb-elastic:CreateCluster*"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:ec2:*:*:snapshot/*","arn:aws:rds:*:*:db:*","arn:aws:rds:*:*:snapshot:*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*","arn:aws:docdb-elastic:*:*:cluster/*"],"Condition":{"Null":{"aws:RequestTag/owner":"true"},"StringNotEqualsIfExists":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLikeIfExists":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac*"}}},{"Sid":"D5","Effect":"Deny","Action":["ec2:RunInstances","ec2:CreateVolume","ec2:CreateSnapshot*","rds:CreateDBInstance","rds:CreateDBSnapshot","elasticloadbalancing:CreateLoadBalancer","docdb-elastic:CreateCluster*"],"Resource":["arn:aws:ec2:*:*:instance/*","arn:aws:ec2:*:*:volume/*","arn:aws:ec2:*:*:snapshot/*","arn:aws:rds:*:*:db:*","arn:aws:rds:*:*:snapshot:*","arn:aws:elasticloadbalancing:*:*:loadbalancer/*","arn:aws:docdb-elastic:*:*:cluster/*"],"Condition":{"Null":{"aws:RequestTag/createdby":"true"},"StringNotEqualsIfExists":{"aws:UserAgent":"application-autoscaling.amazonaws.com"},"ArnNotLikeIfExists":{"aws:PrincipalArn":"arn:aws:iam::*:role/mi-iaac*"}}},{"Sid":"DMZ","Effect":"Deny","Action":"ec2:RunInstances","Resource":"arn:aws:ec2:*:*:subnet/*","Condition":{"StringLike":{"aws:ResourceTag/Name":"*-dmz-*"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "D1",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "ec2:CreateSnapshot*",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "docdb-elastic:CreateCluster*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:rds:*:*:db:*",
+                "arn:aws:rds:*:*:snapshot:*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*",
+                "arn:aws:docdb-elastic:*:*:cluster/*"
+            ],
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/Name": "true"
+                },
+                "StringNotEqualsIfExists": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLikeIfExists": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac*"
+                }
+            }
+        },
+        {
+            "Sid": "D2",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "ec2:CreateSnapshot*",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "docdb-elastic:CreateCluster*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:rds:*:*:db:*",
+                "arn:aws:rds:*:*:snapshot:*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*",
+                "arn:aws:docdb-elastic:*:*:cluster/*"
+            ],
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/dud": "true"
+                },
+                "StringNotEqualsIfExists": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLikeIfExists": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac*"
+                }
+            }
+        },
+        {
+            "Sid": "D3",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "ec2:CreateSnapshot*",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "docdb-elastic:CreateCluster*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:rds:*:*:db:*",
+                "arn:aws:rds:*:*:snapshot:*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*",
+                "arn:aws:docdb-elastic:*:*:cluster/*"
+            ],
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/cloudservice": "true"
+                },
+                "StringNotEqualsIfExists": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLikeIfExists": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac*"
+                }
+            }
+        },
+        {
+            "Sid": "D4",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "ec2:CreateSnapshot*",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "docdb-elastic:CreateCluster*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:rds:*:*:db:*",
+                "arn:aws:rds:*:*:snapshot:*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*",
+                "arn:aws:docdb-elastic:*:*:cluster/*"
+            ],
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/owner": "true"
+                },
+                "StringNotEqualsIfExists": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLikeIfExists": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac*"
+                }
+            }
+        },
+        {
+            "Sid": "D5",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:CreateVolume",
+                "ec2:CreateSnapshot*",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "docdb-elastic:CreateCluster*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:rds:*:*:db:*",
+                "arn:aws:rds:*:*:snapshot:*",
+                "arn:aws:elasticloadbalancing:*:*:loadbalancer/*",
+                "arn:aws:docdb-elastic:*:*:cluster/*"
+            ],
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/createdby": "true"
+                },
+                "StringNotEqualsIfExists": {
+                    "aws:UserAgent": "application-autoscaling.amazonaws.com"
+                },
+                "ArnNotLikeIfExists": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/mi-iaac*"
+                }
+            }
+        },
+        {
+            "Sid": "DMZ",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:*:*:subnet/*",
+            "Condition": {
+                "StringLike": {
+                    "aws:ResourceTag/Name": "*-dmz-*"
+                }
+            }
+        }
+    ]
+}

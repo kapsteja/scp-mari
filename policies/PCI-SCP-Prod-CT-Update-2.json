@@ -1,1 +1,117 @@
-{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Action":"*","Resource":["*"],"Condition":{"StringLike":{"aws:PrincipalArn":["arn:aws:iam::*:root"]}}},{"Effect":"Deny","Action":["*"],"Resource":["*"],"Condition":{"Bool":{"ram:AllowsExternalPrincipals":"true"}}},{"Effect":"Deny","Action":["ec2:RunInstances"],"Resource":["arn:aws:ec2:*::image/ami-*"],"Condition":{"StringEquals":{"ec2:ResourceTag/GAMI":"true"}}},{"Effect":"Deny","Action":["ram:CreateResourceShare","ram:UpdateResourceShare"],"Resource":"*","Condition":{"Bool":{"ram:RequestedAllowsExternalPrincipals":"true","ram:AllowsExternalPrincipals":"true"}}},{"Effect":"Deny","Action":["ec2:DeleteFlowLogs","logs:DeleteLogGroup","logs:DeleteLogStream","iam:AttachUserPolicy","iam:CreateAccessKey","iam:CreateUser","iam:PutUserPolicy","iam:DeleteSAMLProvider","iam:AttachRolePolicy","iam:DeleteRole","iam:DeleteRolePermissionsBoundary","iam:DeleteRolePolicy","iam:DetachRolePolicy","iam:PutRolePermissionsBoundary","iam:PutRolePolicy","iam:UpdateAssumeRolePolicy","iam:UpdateRole","iam:UpdateRoleDescription","organizations:LeaveOrganization","organizations:DeleteOrganization","config:DeleteConfigurationAggregator","config:DeleteConfigurationRecorder","config:DeleteDeliveryChannel","config:DeleteRetentionConfiguration","config:PutConfigurationAggregator","config:PutConfigurationRecorder","config:PutDeliveryChannel","config:PutRetentionConfiguration","config:StopConfigurationRecorder"],"Resource":["*"],"Condition":{"StringNotLike":{"aws:PrincipalArn":["arn:aws:iam::*:role/AWSCloudFormationStackSetExecutionRole","arn:aws:iam::*:role/AWSCloudFormationStackSetExecutionRoleCSAO","arn:aws:iam::*:role/AWSReservedSSO_AWSAdministratorAccess_*","arn:aws:iam::*:role/AWSReservedSSO_mi-ps-agrp-micp-aws-admin_*","arn:aws:iam::*:role/stacksets-exec-*","arn:aws:iam::*:role/mi-ansible-aap","arn:aws:iam::*:role/aws-controltower-AdministratorExecutionRole","arn:aws:iam::*:role/AWSControlTowerExecution","arn:aws:iam::*:role/mi-iaac","arn:aws:iam::*:role/mi-breakglass","arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_mi-ps-agrp-micp-aws-admin_*","arn:aws:iam::*:role/mi-lz-eks*-ack-iam","arn:aws:iam::*:role/mgp-tip-*-ack-iam"]}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::*:root"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "*"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Bool": {
+                    "ram:AllowsExternalPrincipals": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*::image/ami-*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/GAMI": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ram:CreateResourceShare",
+                "ram:UpdateResourceShare"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "ram:RequestedAllowsExternalPrincipals": "true",
+                    "ram:AllowsExternalPrincipals": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:DeleteFlowLogs",
+                "logs:DeleteLogGroup",
+                "logs:DeleteLogStream",
+                "iam:AttachUserPolicy",
+                "iam:CreateAccessKey",
+                "iam:CreateUser",
+                "iam:PutUserPolicy",
+                "iam:DeleteSAMLProvider",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRole",
+                "iam:DeleteRolePermissionsBoundary",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePermissionsBoundary",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:UpdateRole",
+                "iam:UpdateRoleDescription",
+                "organizations:LeaveOrganization",
+                "organizations:DeleteOrganization",
+                "config:DeleteConfigurationAggregator",
+                "config:DeleteConfigurationRecorder",
+                "config:DeleteDeliveryChannel",
+                "config:DeleteRetentionConfiguration",
+                "config:PutConfigurationAggregator",
+                "config:PutConfigurationRecorder",
+                "config:PutDeliveryChannel",
+                "config:PutRetentionConfiguration",
+                "config:StopConfigurationRecorder"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::*:role/AWSCloudFormationStackSetExecutionRole",
+                        "arn:aws:iam::*:role/AWSCloudFormationStackSetExecutionRoleCSAO",
+                        "arn:aws:iam::*:role/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/AWSReservedSSO_mi-ps-agrp-micp-aws-admin_*",
+                        "arn:aws:iam::*:role/stacksets-exec-*",
+                        "arn:aws:iam::*:role/mi-ansible-aap",
+                        "arn:aws:iam::*:role/aws-controltower-AdministratorExecutionRole",
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/mi-iaac",
+                        "arn:aws:iam::*:role/mi-breakglass",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_mi-ps-agrp-micp-aws-admin_*",
+                        "arn:aws:iam::*:role/mi-lz-eks*-ack-iam",
+                        "arn:aws:iam::*:role/mgp-tip-*-ack-iam"
+                    ]
+                }
+            }
+        }
+    ]
+}

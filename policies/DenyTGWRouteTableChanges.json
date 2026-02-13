@@ -1,1 +1,61 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"DenyTGWRouteTableTagChanges1","Effect":"Deny","Action":["ec2:CreateTags","ec2:DeleteTags"],"Resource":["arn:aws:ec2:*:*:transit-gateway-route-table/*"],"Condition":{"ArnNotLike":{"aws:PrincipalArn":["arn:aws:iam::216001965733:role/mi-network-admin","arn:aws:iam::216001965733:role/mi-iaac","arn:aws:iam::216001965733:role/mi-breakglass","arn:aws:iam::216001965733:role/mi-ansible-aap","arn:aws:iam::216001965733:role/TransitNetworkExecutionRole-*"]},"StringLike":{"aws:RequestTag/Name":["","?*"]}}},{"Sid":"DenyTGWRouteTableTagChanges2","Effect":"Deny","Action":["ec2:CreateTags","ec2:DeleteTags"],"Resource":["arn:aws:ec2:*:*:transit-gateway-route-table/*"],"Condition":{"ArnNotLike":{"aws:PrincipalArn":["arn:aws:iam::216001965733:role/mi-network-admin","arn:aws:iam::216001965733:role/mi-iaac","arn:aws:iam::216001965733:role/mi-breakglass","arn:aws:iam::216001965733:role/mi-ansible-aap","arn:aws:iam::216001965733:role/TransitNetworkExecutionRole-*"]},"StringLike":{"aws:RequestTag/account":["","?*"]}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyTGWRouteTableTagChanges1",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:transit-gateway-route-table/*"
+            ],
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::216001965733:role/mi-network-admin",
+                        "arn:aws:iam::216001965733:role/mi-iaac",
+                        "arn:aws:iam::216001965733:role/mi-breakglass",
+                        "arn:aws:iam::216001965733:role/mi-ansible-aap",
+                        "arn:aws:iam::216001965733:role/TransitNetworkExecutionRole-*"
+                    ]
+                },
+                "StringLike": {
+                    "aws:RequestTag/Name": [
+                        "",
+                        "?*"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyTGWRouteTableTagChanges2",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:transit-gateway-route-table/*"
+            ],
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::216001965733:role/mi-network-admin",
+                        "arn:aws:iam::216001965733:role/mi-iaac",
+                        "arn:aws:iam::216001965733:role/mi-breakglass",
+                        "arn:aws:iam::216001965733:role/mi-ansible-aap",
+                        "arn:aws:iam::216001965733:role/TransitNetworkExecutionRole-*"
+                    ]
+                },
+                "StringLike": {
+                    "aws:RequestTag/account": [
+                        "",
+                        "?*"
+                    ]
+                }
+            }
+        }
+    ]
+}

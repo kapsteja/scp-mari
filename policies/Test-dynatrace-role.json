@@ -1,1 +1,24 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"SCPforDynatrace","Effect":"Allow","Action":["ec2:DescribeInstances","ec2:DescribeAvailabilityZones","dynamodb:ListTables"],"Resource":["*"],"Condition":{"StringNotLike":{"aws:PrincipalArn":["arn:aws:sts::::assumed-role/mi-dynatrace-role"]}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SCPforDynatrace",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeAvailabilityZones",
+                "dynamodb:ListTables"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:sts::::assumed-role/mi-dynatrace-role"
+                    ]
+                }
+            }
+        }
+    ]
+}

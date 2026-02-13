@@ -1,1 +1,25 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"Statement1","Effect":"Deny","Action":["sso:CreateAccountAssignment","sso:DeleteAccountAssignment"],"Resource":["arn:aws:sso:::account/648695786025"],"Condition":{"ArnLike":{"aws:PrincipalArn":["arn:aws:sts::648695786025:assumed-role/mi-admin/rjain362","arn:aws:sts::648695786025:assumed-role/mi-admin/amanj426","arn:aws:sts::648695786025:assumed-role/mi-admin/vsura622"]}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Deny",
+            "Action": [
+                "sso:CreateAccountAssignment",
+                "sso:DeleteAccountAssignment"
+            ],
+            "Resource": [
+                "arn:aws:sso:::account/648695786025"
+            ],
+            "Condition": {
+                "ArnLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:sts::648695786025:assumed-role/mi-admin/rjain362",
+                        "arn:aws:sts::648695786025:assumed-role/mi-admin/amanj426",
+                        "arn:aws:sts::648695786025:assumed-role/mi-admin/vsura622"
+                    ]
+                }
+            }
+        }
+    ]
+}

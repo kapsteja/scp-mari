@@ -1,1 +1,125 @@
-{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"StringNotLike":{"aws:RequestTag/Name":"?*","aws:RequestTag/dud":"?*","aws:RequestTag/cloudservice":"?*","aws:RequestTag/owner":"?*","aws:RequestTag/createdby":"?*","aws:RequestTag/accenture_ru":"?*","aws:RequestTag/environment":"?*","aws:RequestTag/location":"?*","aws:RequestTag/project":"?*"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"dud"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"owner"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"createdby"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"environment"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"location"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"project"}}},{"Effect":"Deny","Action":["rds:CreateDBSnapshot"],"Resource":["arn:aws:rds:*:*:snapshot:*"],"Condition":{"ForAllValues:StringNotLike":{"aws:TagKeys":"Name"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:RequestTag/Name": "?*",
+                    "aws:RequestTag/dud": "?*",
+                    "aws:RequestTag/cloudservice": "?*",
+                    "aws:RequestTag/owner": "?*",
+                    "aws:RequestTag/createdby": "?*",
+                    "aws:RequestTag/accenture_ru": "?*",
+                    "aws:RequestTag/environment": "?*",
+                    "aws:RequestTag/location": "?*",
+                    "aws:RequestTag/project": "?*"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "dud"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "owner"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "createdby"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "environment"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "location"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "project"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBSnapshot"
+            ],
+            "Resource": [
+                "arn:aws:rds:*:*:snapshot:*"
+            ],
+            "Condition": {
+                "ForAllValues:StringNotLike": {
+                    "aws:TagKeys": "Name"
+                }
+            }
+        }
+    ]
+}

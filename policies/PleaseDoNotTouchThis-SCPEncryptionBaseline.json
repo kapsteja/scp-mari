@@ -1,1 +1,64 @@
-{"Version":"2012-10-17","Statement":[{"Sid":"DenyUnencryptedEBSVolume","Effect":"Deny","Action":"ec2:CreateVolume","Resource":"*","Condition":{"Bool":{"ec2:Encrypted":"false"}}},{"Sid":"DenyRunInstancesWithUnencryptedVolumes","Effect":"Deny","Action":"ec2:RunInstances","Resource":"*","Condition":{"Bool":{"ec2:Encrypted":"false"}}},{"Sid":"DenyUnencryptedRDSInstances","Effect":"Deny","Action":"rds:CreateDBInstance","Resource":"arn:aws:rds:*:*:db:*","Condition":{"ForAnyValue:StringEquals":{"rds:DatabaseEngine":["mariadb","mysql","oracle-ee","oracle-se2","oracle-se1","oracle-se","postgres","sqlserver-ee","sqlserver-se","sqlserver-ex","sqlserver-web"]},"Bool":{"rds:StorageEncrypted":"false"}}},{"Sid":"DenyUnencryptedAuroraClusters","Effect":"Deny","Action":"rds:CreateDBCluster","Resource":"arn:aws:rds:*:*:cluster:*","Condition":{"Bool":{"rds:StorageEncrypted":"false"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyUnencryptedEBSVolume",
+            "Effect": "Deny",
+            "Action": "ec2:CreateVolume",
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "ec2:Encrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "DenyRunInstancesWithUnencryptedVolumes",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "ec2:Encrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "DenyUnencryptedRDSInstances",
+            "Effect": "Deny",
+            "Action": "rds:CreateDBInstance",
+            "Resource": "arn:aws:rds:*:*:db:*",
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "rds:DatabaseEngine": [
+                        "mariadb",
+                        "mysql",
+                        "oracle-ee",
+                        "oracle-se2",
+                        "oracle-se1",
+                        "oracle-se",
+                        "postgres",
+                        "sqlserver-ee",
+                        "sqlserver-se",
+                        "sqlserver-ex",
+                        "sqlserver-web"
+                    ]
+                },
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "DenyUnencryptedAuroraClusters",
+            "Effect": "Deny",
+            "Action": "rds:CreateDBCluster",
+            "Resource": "arn:aws:rds:*:*:cluster:*",
+            "Condition": {
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        }
+    ]
+}

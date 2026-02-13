@@ -1,1 +1,73 @@
-{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Action":["ec2:CreateVolume"],"Resource":"*","Condition":{"Bool":{"ec2:Encrypted":"false"}}},{"Sid":"PreventEc2MountUnencryptedVolume","Effect":"Deny","Action":"ec2:RunInstances","Resource":"arn:aws:ec2:*:*:volume/*","Condition":{"Bool":{"ec2:Encrypted":"false"}}},{"Sid":"StatementForOtherRDS","Effect":"Deny","Action":["rds:CreateDBInstance"],"Resource":["*"],"Condition":{"ForAnyValue:StringEquals":{"rds:DatabaseEngine":["mariadb","mysql","oracle-ee","oracle-se2","oracle-se1","oracle-se","postgres","sqlserver-ee","sqlserver-se","sqlserver-ex","sqlserver-web"]},"Bool":{"rds:StorageEncrypted":"false"}}},{"Sid":"StatementForAurora","Effect":"Deny","Action":["rds:CreateDBCluster"],"Resource":["*"],"Condition":{"Bool":{"rds:StorageEncrypted":"false"}}}]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:CreateVolume"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "ec2:Encrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "PreventEc2MountUnencryptedVolume",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:*:*:volume/*",
+            "Condition": {
+                "Bool": {
+                    "ec2:Encrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "StatementForOtherRDS",
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBInstance"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "rds:DatabaseEngine": [
+                        "mariadb",
+                        "mysql",
+                        "oracle-ee",
+                        "oracle-se2",
+                        "oracle-se1",
+                        "oracle-se",
+                        "postgres",
+                        "sqlserver-ee",
+                        "sqlserver-se",
+                        "sqlserver-ex",
+                        "sqlserver-web"
+                    ]
+                },
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        },
+        {
+            "Sid": "StatementForAurora",
+            "Effect": "Deny",
+            "Action": [
+                "rds:CreateDBCluster"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Bool": {
+                    "rds:StorageEncrypted": "false"
+                }
+            }
+        }
+    ]
+}
