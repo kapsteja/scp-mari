@@ -13,3 +13,13 @@ variable "attachments" {
   type = map(string)
   default = {}
  }
+
+variable "account_id" {
+ type      = string
+ default   = "648695786025"
+}
+
+variable "region" {
+ type      = string
+ default   = "us-east-1"
+}
