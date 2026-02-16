@@ -31,3 +31,11 @@ bash sandbox/imports_sandbox.sh
 terraform plan -var-file="sandbox/sandbox.tfvars"
 terraform apply -var-file="sandbox/sandbox.tfvars"
 
+
+
+terraform init -backend-config=sandbox/backend.conf -reconfigure
+.\sandbox\run_imports.ps1
+terraform plan -var-file="sandbox/sandbox.tfvars"
+
+
+
