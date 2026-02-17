@@ -1,0 +1,124 @@
+$ ./sandbox/imports_sandbox.sh
+./sandbox/imports_sandbox.sh: line 1: #!/usr/bin/env: No such file or directory
+data.local_file.scp["DR-WIP.json"]: Reading...
+data.local_file.scp["EBS_Enforce_encryption_DR.json"]: Reading...
+data.local_file.scp["Deny-marrcloud-permission-mgmt.json"]: Reading...
+data.local_file.scp["block-console-access-test.json"]: Reading...
+data.local_file.scp["AllowOAMActions.json"]: Reading...
+data.local_file.scp["EBS_Enforce_encryption_DR_Recovery.json"]: Reading...
+data.local_file.scp["DenyMarketplaceAccessToAcceptOffers.json"]: Reading...
+data.local_file.scp["DenyDMZRunInstances.json"]: Reading...
+data.local_file.scp["Deny-RDSSNAPSHOTS-Without-Tags-CT-WIP.json"]: Reading...
+data.local_file.scp["DenyDMZRunInstances.json"]: Read complete after 0s [id=6cbb1111e9123a3b3de4b08ce2c8711af41952d0]
+data.local_file.scp["Deny-marrcloud-permission-mgmt.json"]: Read complete after 0s [id=6b357953d11e9fd908a5412adc50d416b52e4b97]
+data.local_file.scp["EBS_Enforce_encryption_DR.json"]: Read complete after 0s [id=f94061a8dce4c7d63b8eb99e0700e86fd744bfec]
+data.local_file.scp["EBS_Enforce_encryption_DR_Recovery.json"]: Read complete after 0s [id=24814a5294d667499aede7dd13b0127e66ec386e]
+data.local_file.scp["block-console-access-test.json"]: Read complete after 0s [id=ae52202ac3a588f4aacad5377dac4d521679f37e]
+data.local_file.scp["Deny-RDSSNAPSHOTS-Without-Tags-CT-WIP.json"]: Read complete after 0s [id=5bdc9ae9b45f3a0f0bf39cc34092bdd342a0888c]
+data.local_file.scp["DR-WIP.json"]: Read complete after 0s [id=0ef9b9552deb80b9ed6771c757deb11f006a678a]
+data.local_file.scp["Enforce-EBS-Encryption.json"]: Reading...
+data.local_file.scp["PCI-SCP-Prod-CT-Update-2.json"]: Reading...
+data.local_file.scp["Restrict-CSAO.json"]: Reading...
+data.local_file.scp["DenyEc2withoutTags.json"]: Reading...
+data.local_file.scp["block-iam-user-console-Deny-RDS-DocDB-Without-Tags-CT.json"]: Reading...
+data.local_file.scp["AllowOAMActions.json"]: Read complete after 0s [id=311169044626f774e8c6b6718c38aa8fa38a5662]
+data.local_file.scp["DenyMarketplaceAccessToAcceptOffers.json"]: Read complete after 0s [id=222093e25fc239bf3ab40971c0fad3b18b7d18d6]
+data.local_file.scp["Deny-Lambda-Without-Code-Signing-Config-CT-Test.json"]: Reading...
+data.local_file.scp["PII-SCP-Prod-CT.json"]: Reading...
+data.local_file.scp["PCI-SCP-Prod-CT-Update-2.json"]: Read complete after 0s [id=2dfdfb41bada04a069cb49a865e47982833ce59b]
+data.local_file.scp["DenyPublicS3Buckets.json"]: Reading...
+data.local_file.scp["Restrict-CSAO.json"]: Read complete after 0s [id=a35586c535198db3fb3d8abcf4e2aaf82305fb42]
+data.local_file.scp["123456Test_MergedTagEnforcement.json"]: Reading...
+data.local_file.scp["Please_Do_Not_Touch_This-_SCP_Encryption_Baseline.json"]: Reading...    
+data.local_file.scp["Enforce-EBS-Encryption.json"]: Read complete after 0s [id=88c52d3a29e8808192e18d3760d37d3b94ccf845]
+data.local_file.scp["DenyEc2withoutTags.json"]: Read complete after 0s [id=96485c13782866d9d6bd877080faf4677be7bb32]
+data.local_file.scp["Deny-Lambda-Without-Code-Signing-Config-CT-Test.json"]: Read complete after 0s [id=bb9729cb641e55861b51df0a24d41203de3af836]
+data.local_file.scp["DenyTGWRouteTableChanges.json"]: Reading...
+data.local_file.scp["block-iam-user-console-Deny-RDS-DocDB-Without-Tags-CT.json"]: Read complete after 0s [id=db64ecaa20fb8938347d0cb5fd8e438021bd0033]
+data.local_file.scp["PII-SCP-Prod-CT.json"]: Read complete after 0s [id=4ff5b6e221fa96087c2935879adc43cb4d58fe26]
+data.local_file.scp["DenyPublicS3Buckets.json"]: Read complete after 0s [id=30dfba53b4275bd2a9fb0207ca1ae7eb49873dd2]
+data.local_file.scp["Test-dynatrace-role.json"]: Reading...
+data.local_file.scp["Deny-EC2-VOL-ELB-RDS-Snapshots-Without-Tags-Legacy.json"]: Reading...   
+data.local_file.scp["Please_Do_not_touch_-_Merged_Encryption_DR.json"]: Reading...
+data.local_file.scp["Deny-EC2-VOL-ELB-RDS-SNAPSHOTS-Without-Tags-CT-OCP.json"]: Reading...   
+data.local_file.scp["PCI-SCP-Prod-CT-Update-1.json"]: Reading...
+data.local_file.scp["DenyStnoTagUpdates.json"]: Reading...
+data.local_file.scp["TEST-block-iam-user-console-Deny-RDS-DocDB-Without-Tags-CT.json"]: Reading...
+data.local_file.scp["123456Test_MergedTagEnforcement.json"]: Read complete after 0s [id=73202fece3ceb2668a7a74cc0e4524068ae64815]
+data.local_file.scp["DenyTGWRouteTableChanges.json"]: Read complete after 0s [id=70ff894d86876bf6ef1d54b98dc0bfba9c3d54ef]
+data.local_file.scp["test-rds-wip.json"]: Reading...
+data.local_file.scp["Terraformscp.json"]: Reading...
+data.local_file.scp["Test-dynatrace-role.json"]: Read complete after 0s [id=9a1615b5d1bf4fd6718258ef3cf0283895729e8a]
+data.local_file.scp["Deny-RDS-DocDB-Without-Tags-CT.json"]: Reading...
+data.local_file.scp["PCI-SCP-Prod-CT-Update-1.json"]: Read complete after 0s [id=fc228a166c2132066bcbb50ba27051b05594da3b]
+data.local_file.scp["Deny-EC2-VOL-ELB-RDS-Snapshots-Without-Tags-Legacy.json"]: Read complete after 0s [id=75337da42b78b7a1480ec75fb00f9da5ab7fec9f]
+data.local_file.scp["Deny-EC2-VOL-ELB-RDS-SNAPSHOTS-Without-Tags-CT-OCP.json"]: Read complete after 0s [id=eed1a6aab592985874a1019c237816a380a711b3]
+data.local_file.scp["TEST-block-iam-user-console-Deny-RDS-DocDB-Without-Tags-CT.json"]: Read complete after 0s [id=3c2268322a691ef2bc0a959bd5b31c75678d56fc]
+data.local_file.scp["DenyStnoTagUpdates.json"]: Read complete after 0s [id=7d046cdc2a11d4812032cef42ae317a13f660266]
+data.local_file.scp["Deny-EC2-ELB-mi-portal.json"]: Reading...
+data.local_file.scp["DenyLambdaCreationWithoutSignerprofile.json"]: Reading...
+data.local_file.scp["TEST-exception-Deny-EC2-VOL-ELB-SNAPSHOTS-Without-Tags-CT.json"]: Reading...
+data.local_file.scp["Please_Do_Not_Touch_This_-Merged_SCP_Testing.json"]: Reading...
+data.local_file.scp["block-iam-user-console-access.json"]: Reading...
+data.local_file.scp["Deny-RDS-DocDB-Without-Tags-CT.json"]: Read complete after 0s [id=1ce9b0ae6655e94b5fcddab7e42794f8eb75be70]
+data.local_file.scp["test-rds-wip.json"]: Read complete after 0s [id=af3c0a9af35cfedf14eb5515dc917ca438b1d6fb]
+data.local_file.scp["Deny-RDS-snapshots-Without-Tags-CT.json"]: Reading...
+data.local_file.scp["Deny-EC2-ELB-mi-portal.json"]: Read complete after 0s [id=a04863ee80fd39c15365acf256d27d7971cc67fa]
+data.local_file.scp["TEST-exception-Deny-EC2-VOL-ELB-SNAPSHOTS-Without-Tags-CT.json"]: Read complete after 0s [id=a591a0f0742411abe93d46aebdab1de381c9eeac]
+data.local_file.scp["DenyLambdaCreationWithoutSignerprofile.json"]: Read complete after 0s [id=fff84d4f37d92a0fa533e63ea0df6d5d8d593107]
+data.local_file.scp["block-iam-user-console-access.json"]: Read complete after 0s [id=a3f1f1a43b0da6fa82b92861524d35362edbc7bb]
+data.local_file.scp["Deny-RDS-snapshots-Without-Tags-CT.json"]: Read complete after 0s [id=71f8d0930f00b5ab78bd597e3b83f1e79d18a48a]
+╷
+│ Error: Read local file data source error
+│
+│   with data.local_file.scp["Please_Do_Not_Touch_This-_SCP_Encryption_Baseline.json"],      
+│   on C:\Users\spupp545\mi-scp-terraform-sandbox\scp-mari-main\data.tf line 2, in data "local_file" "scp":
+│    2: data "local_file" "scp" {
+│
+│ The file at given path cannot be read.
+│
+│ +Original Error: open
+│ C:/Users/spupp545/mi-scp-terraform-sandbox/scp-mari-main/policies/Please_Do_Not_Touch_This-_SCP_Encryption_Baseline.json:
+│ The system cannot find the file specified.
+╵
+ 
+╷
+│ Error: Read local file data source error
+│
+│   with data.local_file.scp["Please_Do_not_touch_-_Merged_Encryption_DR.json"],
+│   on C:\Users\spupp545\mi-scp-terraform-sandbox\scp-mari-main\data.tf line 2, in data "local_file" "scp":
+│    2: data "local_file" "scp" {
+│
+│ The file at given path cannot be read.
+│
+│ +Original Error: open
+│ C:/Users/spupp545/mi-scp-terraform-sandbox/scp-mari-main/policies/Please_Do_not_touch_-_Merged_Encryption_DR.json:
+│ The system cannot find the file specified.
+╵
+ 
+╷
+│ Error: Read local file data source error
+│
+│   with data.local_file.scp["Terraformscp.json"],
+│   on C:\Users\spupp545\mi-scp-terraform-sandbox\scp-mari-main\data.tf line 2, in data "local_file" "scp":
+│    2: data "local_file" "scp" {
+│
+│ The file at given path cannot be read.
+│
+│ +Original Error: open
+│ C:/Users/spupp545/mi-scp-terraform-sandbox/scp-mari-main/policies/Terraformscp.json: The   
+│ system cannot find the file specified.
+╵
+ 
+╷
+│ Error: Read local file data source error
+│
+│   with data.local_file.scp["Please_Do_Not_Touch_This_-Merged_SCP_Testing.json"],
+│   on C:\Users\spupp545\mi-scp-terraform-sandbox\scp-mari-main\data.tf line 2, in data "local_file" "scp":
+│    2: data "local_file" "scp" {
+│
+│ The file at given path cannot be read.
+│
+│ +Original Error: open
+│ C:/Users/spupp545/mi-scp-terraform-sandbox/scp-mari-main/policies/Please_Do_Not_Touch_This_-Merged_SCP_Testing.json:
+│ The system cannot find the file specified.
