@@ -1,0 +1,84 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudWatchLogsAccess",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:us-east-1:${account_id}:log-group:/aws/lambda/${lambda_names}-${environment}:*"
+        },
+        {
+            "Sid": "AllowEC2NetworkInterfaceActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface"
+            ],
+            "Resource" : "*"
+        },
+        {
+            "Action" : [
+              "appconfig:GetConfiguration",
+              "appconfig:StartConfigurationSession",
+              "appconfig:GetLatestConfiguration"
+            ],
+            "Effect"   : "Allow",
+            "Resource" : "*"
+        },
+        {
+            "Sid": "LambdaInvokebySQS",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:GetQueueAttributes",
+                "sqs:ChangeMessageVisibility",
+                "sqs:SendMessage",
+                "sqs:GetQueueUrl"
+            ],
+            "Resource": [
+                "arn:aws:sqs:us-east-1:${account_id}:${subscriptions_sender_sqs_name}-${environment}",
+                "arn:aws:sqs:us-east-1:${account_id}:${subscriptions_sender_sqs_name}-dlq-${environment}"
+            ]
+        },
+        {
+        "Sid": "DynamoDBAccess",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:BatchGetItem",
+                "dynamodb:BatchWriteItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:${account_id}:table/observability-resources-${environment}-observabilityErrorMappingsTable-${error_mapping_table_id}"
+            ]
+        },
+        {
+            "Sid": "S3Access",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:GetObjectVersion",
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:DeleteObject",
+                "s3:DeleteObjectVersion"
+            ],
+            "Resource": [
+                "arn:aws:s3:::shakeshack-${environment}-marketing-opt-in-data",
+                "arn:aws:s3:::shakeshack-${environment}-marketing-opt-in-data/*"
+            ]
+        }
+    ]
+}
