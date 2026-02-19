@@ -1,0 +1,34 @@
+tags        = merge(
+    var.policy_tags,
+    lookup(var.policy_specific_tags, replace(each.key, ".json", ""), {})
+  ) 
+
+variable "policy_tags" {
+  description = "Default tags to apply to all SCP policies"
+  type = map(string)
+  default = {
+    ManagedBy = "Terraform"
+  }
+ }
+
+ variable "policy_specific_tags" {
+  description = "Map of policy name (without .json) to specific tags for that policy"
+  type = map(map(string))
+  default = {}
+ }
+
+# Default tags for production
+policy_tags = {
+  Environment = "production"
+  ManagedBy   = "Terraform"
+}
+
+policy_specific_tags = {
+  "DenyPublicS3Buckets" = {
+    Severity    = "Critical"
+    Compliance  = "SOC2,HIPAA"
+    DataClass   = "Confidential"
+    Owner       = "security-team@company.com"
+    AlertEmail  = "security-alerts@company.com"
+  }
+}
